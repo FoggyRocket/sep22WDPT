@@ -1,0 +1,104 @@
+/* todo */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+/* 
+    aqui si es importante el ; 
+    selectors{
+        property:value;
+        property:value;
+        property:value;
+    }
+*/
+
+/* nodo o tag */
+body{
+    /* van mis estilos */
+    background-color: aqua;
+    color:pink;
+    padding: 10px;
+}
+
+/* 
+ basic:
+ all => * todos los elementos
+ id => #name | solo puede ser de uno
+ class => .name | puede ser de uno a n...
+ node o tag => nodeName (body)
+*/
+form{
+    background-color: rgba(211, 107, 81, 0.4);
+}
+
+#perro{
+    color:black
+}
+
+.list{
+   background-color: blue;
+   font-size: 11px;
+   color:bisque 
+}
+
+
+ol > li{
+    font-size:9px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* y  */
+body > div{
+     background-color: rgb(190,0,0);
+}
+
+
+button{
+    color:#F8C600
+}
+
+img{
+    height: 100px;
+    width: 100px;
+}
+
+
+/* con border */
+
+#conBorder{
+    background-color: peru;
+    width: 150px;
+    /* border-width: top rigth bottom left */
+    /* border-width: (top bottom) (rigth left)  */
+    border-width: 2px;
+    border-style:dotted;
+    border-color: #F8C600;
+    border-radius: 2px;
+
+    /* display: flex;
+    justify-content: center; */
+
+    text-align:center;
+    margin: 10px;
+}
+
+#conBorder2{
+    background-color: peru;
+    width: 150px;
+    border:2px solid #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align:center;
+    
+}
+
+#gato{
+    box-sizing: border-box;
+    background-color: peru;
+    width: 170px;
+    border:1px solid #fff;
+    padding-left:10px;
+    padding-right: 10px;
+}
