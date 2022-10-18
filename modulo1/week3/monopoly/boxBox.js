@@ -6,6 +6,7 @@ class Player{
         this.name=name;
         this.atk=atk;
         this.defens=defens;
+        this.dylanArmy = []; 
     }
         //enemy = {name:2,hp:400,}
     hit(enemy){
@@ -24,8 +25,6 @@ class Player{
         }
     }
 }
-
-
 class Mike extends Player{
     constructor(){
         super("Mike",100,70)//hardcode o colocando por defecto
