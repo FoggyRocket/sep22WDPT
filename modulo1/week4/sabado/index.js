@@ -159,7 +159,6 @@ let city= "CDMX";
 function movedOut(){
     name = "Dylan" // se reasigna
     let age = "No se dice la edad"; // se declara una nueva variable para el scope de la funcion
-
     console.log(`fn)${name} se mudo a ${city} a la edad de ${age}`)
 }
 
@@ -255,3 +254,44 @@ const book = {
   console.log("que es pub:",publishers, book.publishers)
 
   console.log("que es theRest",theRest)
+
+ // ejecutar determinada accion dentro de un tiempo establacido
+ //setTimeout(()=>{...code }, timeMs)
+ let pig;
+  setTimeout(()=>{
+    console.log("Perro 0")
+    pig=10
+  },5000)
+
+  console.log("Perro 1")
+  console.log("Perro 2")
+  console.log("Perro 3", 4 + pig) //NaN
+  // Async && await
+
+
+ //async siguen su ejecucion backgraound y regresaran el valor una vez que terminen
+ // no detienen el codigo de js 
+ //SYNCRONO
+
+
+
+ //setInterval ejecutara codigo cada determinado tiempo // se ejecuta infinidad
+
+ //setTimeout ejecuta despues de terminado tiempo // solo una vez
+
+//setIterval(()=>{}, ms )
+ let idInterval = setInterval(()=>{
+    console.log("Ya vamanos pls")
+ },3000)
+
+ console.log("el id",idInterval)
+
+//clearInterval(idIterval) limpiarlos
+
+
+ setTimeout(()=>{
+    console.log("se de tiene el intervalo")
+    clearInterval(idInterval)
+ }, 10000)
+
+ //clearTimeout(idTimeOut)
