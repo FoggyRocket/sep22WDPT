@@ -86,17 +86,54 @@ function obtainDirections(step){
     //una promesa siempre tiene  un "then" && "catch" (finally)
 }
          //promise.then(callback).catch(errorCallback).finally(callback)
-obtainDirections(0)
-.then(()=>{
-    console.log("dentro del then")
-    return obtainDirections(1)
+// obtainDirections(0)
+// .then(()=>{
+//     console.log("dentro del then",)
+//     return obtainDirections(1)
+// })
+// .then(()=> obtainDirections(2)) //<== en automatico retorna lo que regresa la funcion 
+// .then(()=>obtainDirections(3))
+// // .then(()=>obtainDirections(4)) //<=== 
+// .catch((error)=>{
+//     console.warn(error)
+// })
+// .finally(()=>{
+//     console.log("Soy el final")
+// })
+
+//Promise All
+
+const p1 = new Promise((resolve,reject)=>{
+    setTimeout(()=>reject("foo"),10000)
 })
-.then(()=> obtainDirections(2)) //<== en automatico retorna lo que regresa la funcion 
-.then(()=>obtainDirections(3))
-// .then(()=>obtainDirections(4)) //<=== 
-.catch((error)=>{
-    console.warn(error)
+const p2 = new Promise((resolve,reject)=>{
+    setTimeout(()=>resolve(123456),2000)
 })
-.finally(()=>{
-    console.log("Soy el final")
+const p3 = new Promise((resolve,reject)=>{
+    setTimeout(()=>resolve({name:"JOSE"}), 4000)
 })
+const p4 = new Promise((resolve,reject)=>{
+    setTimeout(()=>resolve("perdon me voy a morir"),1000 )
+})
+        //res
+            //0, 1, 2, 3
+Promise.all([p1,p3,p4,p2])
+.then((res)=>{ console.log("la res:",res)})
+.catch((error)=>{ console.log("el error All:",error)})
+//.finally(()=>{})
+
+Promise.all([
+    obtainDirections(0),
+    obtainDirections(1),
+    obtainDirections(2),
+    obtainDirections(3),
+])
+.then((res)=>{ console.log("la res:",res)})
+.catch((error)=>{ console.log("el error All:",error)})
+
+
+
+//a = 4 //3
+//b = 3 //2
+//c = 11 
+//d = 10
