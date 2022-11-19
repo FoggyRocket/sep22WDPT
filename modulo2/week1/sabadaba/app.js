@@ -1,11 +1,11 @@
 //importar
 //const nombrePacake = require("nombrePAcka")
 //const {elmeto,otro} = requiere("nombrePAcka")
-const express = require("express");
+const express = require("express");//...>
 
 
 //vamos a crear nuestro server todo gracias al poderoso express
-const app = express()
+const app = express() //--->
 
 // esto es para mas tarde
 //haremos una config para usar css, assets, images
