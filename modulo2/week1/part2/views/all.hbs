@@ -1,0 +1,16 @@
+
+
+{{!-- <ul>
+     {{#each players}}
+        <li>{{name}}</li>
+         <li>{{this.lastName}}</li>
+     {{/each}}
+</ul> --}}
+{{!-- 
+  players=[{...}]
+  this = {}
+ --}}
+{{#each players}}
+    {{>cardPlayer this}}
+
+{{/each}}
