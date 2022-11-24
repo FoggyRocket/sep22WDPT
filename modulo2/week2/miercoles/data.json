@@ -1,0 +1,58 @@
+[
+    {
+      "isAvailable": false,
+      "breed": "Pastor Belga",
+      "weight": 20,
+      "gender": "Male",
+      "name": "Lua",
+      "age": 4
+    },
+    {
+      "isAvailable": true,
+      "breed": "schnauzer",
+      "weight": 11,
+      "gender": "Male",
+      "name": "Blacky",
+      "age": 10
+    },
+    {
+      "isAvailable": false,
+      "breed": "Meztizo",
+      "weight": 15,
+      "gender": "Male",
+      "name": "Dante",
+      "age": 2
+    },
+    {
+      "isAvailable": true,
+      "breed": "dachshund",
+      "weight": 20,
+      "gender": "female",
+      "name": "Dona",
+      "age": 6
+    },
+    {
+      "isAvailable": false,
+      "breed": "Australian sheppard",
+      "weight": 12,
+      "gender": "male",
+      "name": "Loki",
+      "age": 10
+    },
+    {
+      "isAvailable": true,
+      "breed": "Pitbull",
+      "weight": 20,
+      "gender": "female",
+      "name": "Kyra",
+      "age": 3
+    },
+    {
+      "isAvailable": true,
+      "breed": "chihuahua",
+      "weight": 0.5,
+      "gender": "male",
+      "name": "Simon",
+      "age": 5
+    }
+  ]
