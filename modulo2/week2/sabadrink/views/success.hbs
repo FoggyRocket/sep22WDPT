@@ -1,0 +1,8 @@
+<h1>Te has logeado chido {{user.username}}</h1>
+{{!-- usar los valores de un objeto sin necesidad de colocar obj.llave --}}
+{{#with user}}
+    <p>{{username}}</p>
+    <p>{{address}}</p>
+{{/with}}
+
+{{>cardUser user}}

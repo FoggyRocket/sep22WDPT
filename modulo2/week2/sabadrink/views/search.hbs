@@ -1,0 +1,21 @@
+{{!-- los form llevan 2 propiedades importantes
+  action="ruta hacian donde mandar info"
+  method="verbo con el que se comunicara"
+  enctype para mandar archivos
+ --}}
+<form action="/search" method="get" >
+
+{{!-- los inputs siempre siempre deben de tener una propiedad
+ "name" 
+ 
+ --}}
+  <input type="text" name="gatos"  />
+  <input type="text" name="perros"  />
+  <button type="submit">Buscar</button>
+</form
+
+{{!-- 
+http://localhost:3000/search? <- input sin name
+http://localhost:3000/search?gatos=Bola+de+nieve+IV+
+http://localhost:3000/search?gatos=Bola+de+nieve+VII&perros=Huesos 
+ --}}

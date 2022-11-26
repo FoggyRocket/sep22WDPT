@@ -6,3 +6,30 @@
     <li>Partials</li>
     <li>Mandar datos del front al back</li>
 </ul>
+
+
+<form action="/login" method="post">
+    <label for="username">Username</label>
+    <input type="text" name="username">
+    <label for="password">Password</label>
+    <input type="text" name="password">
+    <label>Demo</label>
+    <input type="text" name="typePizza" />
+    <button type="submit">Enviar</button>
+</form>
+
+{{!-- block helper each --}}
+
+
+{{#each users}}
+{{!-- partials use   this={username, address}--}}
+    {{>cardUser this }}
+{{/each}}
+
+<ul>
+    {{#each users}}
+    <a href="/status/{{address}}">
+        <li>{{username}}</li>
+    </a>
+    {{/each}}
+</ul>
