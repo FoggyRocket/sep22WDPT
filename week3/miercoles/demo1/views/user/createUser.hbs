@@ -1,0 +1,30 @@
+<h1>Crear Usuario</h1>
+{{! localhost:3000//  localhost:3000/user/create }}
+{{!-- toda la info la va a mandar en el req.body --}}
+<form action="/user/create" method="post">
+  <label for="">
+    Username
+    <input type="text" name="username" />
+  </label>
+  <label for="">
+    Correo
+    <input type="text" name="email" />
+  </label>
+  <label for="">
+    Contraseña
+    <input type="text" name="password" />
+  </label>
+  <label for="">
+    Nombre
+    <input type="text" name="firstName" />
+  </label>
+  <label for="">
+    Apellido
+    <input type="text" name="lastName"/>
+  </label>
+  <label for="">
+    Sobre ti
+    <input type="text" name="description" />
+  </label>
+  <button type="submit">Crear</button>
+</form>

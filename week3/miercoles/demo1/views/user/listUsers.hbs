@@ -1,0 +1,9 @@
+<h1>Lista de usuarios</h1>
+
+<ul>
+    {{#each users}}
+     <a href="/user/{{_id}}/detail">
+        <li>{{username}}</li>
+     </a>
+    {{/each}}
+</ul>
