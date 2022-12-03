@@ -1,0 +1,27 @@
+<form
+    {{!-- 
+    "www.dylanserver.com"
+    "localhost:3000"/toon/create  --}}
+    action="/toon/create"
+    method="post"
+>
+    <fieldset class="uk-fieldset">
+
+        <legend class="uk-legend">Legend</legend>
+
+        <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="Nombre" aria-label="Input" name="name">
+        </div>
+        <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="Estudio" aria-label="Input" name="studio">
+        </div>
+        <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="Frase" aria-label="Input" name="catchPhrase">
+        </div>
+        <button type="submit" class="uk-button uk-button-primary">Crear</button>
+    </fieldset>
+</form>
+
+{{#if errorMessage}}
+    <span>{{errorMessage}}</span>
+{{/if}}

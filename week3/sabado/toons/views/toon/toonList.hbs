@@ -1,0 +1,15 @@
+<h1 class="uk-heading-large">Toons</h1>
+
+<div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
+    {{!-- each es para crear una lista dinamica --}}
+    {{#each toons}}
+    <div>
+        <div class="uk-card uk-card-hover uk-card-body">
+            <h3 class="uk-card-title">{{name}}</h3>
+            <p>{{catchPhrase}}</p>
+        </div>
+    </div>
+    {{/each}}
+
+
+</div>

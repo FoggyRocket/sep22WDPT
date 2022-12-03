@@ -1,0 +1,19 @@
+<h1 class="uk-heading-large">Lista de tv shows</h1>
+
+<div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
+    {{!-- each es para crear una lista dinamica --}}
+    {{#each tvshows}}
+    <div>
+        <div class="uk-card uk-card-hover uk-card-body">
+            <h3 class="uk-card-title">{{name}}</h3>
+            <ul class="uk-list">
+                {{#each _cast}}
+                    <li>{{name}}---{{studio}}</li>
+                {{/each}}
+            </ul>
+            <a href="/tvshow/{{_id}}/edit" uk-icon="icon: pencil"></a>
+            <a href="/tvshow/{{_id}}/delete" uk-icon="icon: trash"></a>
+        </div>
+    </div>
+    {{/each}}
+</div>

@@ -1,0 +1,29 @@
+
+<form
+    action="/tvshow/create"
+    method="post"
+>
+    <fieldset class="uk-fieldset">
+
+        <legend class="uk-legend">Crear un tvshow</legend>
+
+        <div class="uk-margin">
+            <input name="fieldN" class="uk-input" type="text" placeholder="Nombre" aria-label="Nombre">
+        </div>
+
+
+        <div class="uk-margin">
+            <input name="arraySeason" class="uk-input" type="text" placeholder="Temporadas" aria-label="Temporadas">
+        </div>
+
+        <div class="uk-margin">
+            <select name="arrayIds" class="uk-select" aria-label="Select" multiple>
+                <option>elige uno o mas</option>
+                {{#each toons}}
+                    <option value="{{_id}}">{{name}}</option>
+                {{/each}}
+            </select>
+        </div>
+		<button class="uk-button uk-button-primary">Crear</button>
+    </fieldset>
+</form>
