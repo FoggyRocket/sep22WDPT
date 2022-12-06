@@ -8,14 +8,19 @@
     {{#if isComplete}}
       <p>Terminada</p>
     {{else}}
-      <p>sin comenzar</p>
+      <form
+        action="/task/{{_id}}/complete"
+        method="post"
+      >
+        <button type="submit" class="btn btn-success">Marcar como completada</button>
+      </form>
     {{/if}}
     {{!-- ejemplo with 
       {{#with subtareas}}
         <p>{{name}}: </p>
       {{/with}}
     --}}
-    <a href="#" class="card-link">editar link</a>
-    <a href="#" class="card-link">eliminar link</a>
+    <a href="/task/{{_id}}/edit" class="card-link">editar link</a>
+    <a href="/task/{{_id}}/delete" class="card-link">eliminar link</a>
   </div>
 </div>

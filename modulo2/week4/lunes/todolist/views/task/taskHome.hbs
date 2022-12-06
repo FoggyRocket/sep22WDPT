@@ -2,6 +2,57 @@
   <div class="row">
     <div class="col">
         column1
+      {{#if isEdit}}
+      <form
+        action="/task/{{taskEdit._id}}/edit"
+        method="post"
+      >
+        <div class="mb-3">
+          <label for="title" class="form-label">Titulo</label>
+          <input
+            value="{{taskEdit.title}}"
+            type="text"
+            class="form-control"
+            id="title"
+            placeholder="Nombre de tarea"
+            name="title"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Descripcion</label>
+          <textarea
+            class="form-control"
+            id="description"
+            rows="3"
+            name="description"
+          >
+          {{taskEdit.description}}
+          </textarea>
+        </div>
+        <div class="form-check">
+
+          <input name="isComplete" value="on" class="form-check-input" type="radio" id="flexRadioDefault1" 
+          {{#if taskEdit.isComplete}}
+          checked
+          {{/if}}
+          >
+          <label class="form-check-label" for="flexRadioDefault1">
+            Marcar como completada
+          </label>
+        </div>
+        <div class="form-check">
+          <input name="isComplete" value="off" class="form-check-input" type="radio" id="flexRadioDefault2"
+          {{#unless taskEdit.isComplete}}
+          checked
+          {{/unless}}
+          >
+          <label class="form-check-label" for="flexRadioDefault2">
+            Marcar como no completada
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Editar</button>
+      </form>
+      {{else}}
       <form
         action="/task/create"
         method="post"
@@ -27,6 +78,7 @@
         </div>
         <button type="submit" class="btn btn-primary">Crear</button>
       </form>
+      {{/if}}
     </div>
     <div class="col">
       Column2
