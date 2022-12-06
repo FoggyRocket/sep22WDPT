@@ -1,0 +1,40 @@
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+        column1
+      <form
+        action="/task/create"
+        method="post"
+      >
+        <div class="mb-3">
+          <label for="title" class="form-label">Titulo</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            placeholder="Nombre de tarea"
+            name="title"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Descripcion</label>
+          <textarea
+            class="form-control"
+            id="description"
+            rows="3"
+            name="description"
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Crear</button>
+      </form>
+    </div>
+    <div class="col">
+      Column2
+    {{!-- me ayuda a iterar en [] {} string (each) blockHelper  --}}
+    {{!-- if --- each -- with  --}}
+      {{#each tasks}}
+        {{>cardTask this}}
+      {{/each}}
+    </div>
+  </div>
+</div>
