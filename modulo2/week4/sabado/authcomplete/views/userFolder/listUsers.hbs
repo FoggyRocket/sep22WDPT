@@ -1,0 +1,26 @@
+
+<h1>Lista de usuarios solo para admin</h1>
+
+      <table>
+        <thead>
+          <tr>
+              <th>Username</th>
+              <th>email</th>
+              <th>role</th>
+              <th>password</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            {{#each users}}
+            <tr>
+                <td>{{username}}</td>
+                <td>{{email}}</td>
+                <td>{{role}}</td>
+                <td>{{password}}</td>
+            </tr>
+            {{/each}}   
+          
+        </tbody>
+      </table>
+            

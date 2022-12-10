@@ -1,6 +1,7 @@
 const router = require("express").Router()
 const User = require("../models/User.model")
 const bcrypt = require("bcrypt")
+const mongoose = require("mongoose")
 
 const saltRound = 12;
 
@@ -12,6 +13,9 @@ router.get("/signup",(req,res,next)=>{
 router.post("/signup",async (req,res,next)=>{
                                                     //restBody={role}
     const { password, confirmPassword, email,username ,...restBody} = req.body
+
+    console.log("todos los datos:",req.body)
+    console.log("que hay en el restBody:",restBody)
  try {
     if(!email){
                 //.render(es para mostrar archivos de mi carpeta views)
@@ -42,13 +46,25 @@ router.post("/signup",async (req,res,next)=>{
     const salt = bcrypt.genSaltSync(saltRound);
     // hacemos hash de "perrito" -> "1237g25f1265s1203273" 
     const passwordHashed = bcrypt.hashSync(password,salt)
+                                        // .create(req.body)
     const userCreated = await User.create({ email,username, password:passwordHashed })
     //config mongos-conect y session-store
-    console.log("user:",userCreated)    
-    res.redirect("/")
+    const newUser = userCreated.toObject()
+    delete newUser.password
+    //guardar el usuario creado en el req.session para indicar que ya tiene una session activa
+    req.session.currentUser = newUser
+    res.redirect("/user/profile")
  
  } catch (error) {
-    next(error)
+    if (error instanceof mongoose.Error.ValidationError) {
+        res.status(500).render('auth/signup', { errorMessage: error.message });
+      } else if (error.code === 11000) {
+        res.status(500).render('auth/signup', {
+           errorMessage: 'Username and email need to be unique. Either username or email is already used.'
+        });
+      } else {
+        next(error);
+      }
  }
 })
 
@@ -79,15 +95,38 @@ router.post("/login", async(req,res,next)=>{
         const match = bcrypt.compareSync(password, user.password )
 
         if(match){
-            res.status(200).json({user})
+            // vamos a convertir el BSON a un objecto y borrar el password
+            const newUser = user.toObject()
+            delete newUser.password
+            //vamos a guardar el user sin password en el req.session = {}
+            req.session.currentUser = newUser
+            res.redirect("/user/profile")
+
         }else{
             res.render("authFolder/login",{errorMessage:"Las credenciales son incorrectas"}) //El email no existe
         }
 
 
     } catch (error) {
-        next(error)
+        if (error instanceof mongoose.Error.ValidationError) {
+            res.status(500).render('auth/login', { errorMessage: error.message });
+          } else if (error.code === 11000) {
+            res.status(500).render('auth/login', {
+               errorMessage: 'Las credenciales son incorrectas'
+            });
+          } else {
+            next(error);
+          }
     }
+})
+
+router.get("/logout",(req,res,next)=>{
+    req.session.destroy((error)=>{
+        if(error){
+           return  next(error)
+        }
+        res.redirect("/")
+    })
 })
 
 
