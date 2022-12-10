@@ -17,10 +17,16 @@
          <div class="nav-wrapper">
             <a href="/" class="brand-logo">Logo</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="#">login</a></li>
-            <li><a href="#">signup</a></li>
-            <li><a href="#">logout</a></li>
-             <li><a href="#">profile</a></li>
+            <li><a href="/auth/login">login</a></li>
+            {{!-- 
+               baseUrl="http://localhost:3000"
+               a && form
+               http://localhost:3000auth/signup
+               baseUrl + otraRuta
+             --}}
+            <li><a href="/auth/signup">signup</a></li>
+            <li><a href="/auth/logout">logout</a></li>
+             <li><a href="/user/profile">profile</a></li>
             </ul>
          </div>
       </nav>

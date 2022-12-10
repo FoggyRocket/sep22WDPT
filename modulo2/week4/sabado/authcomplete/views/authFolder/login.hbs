@@ -1,0 +1,30 @@
+<div class="row">
+    {{!-- action (ruta) --}}
+  <form action="/auth/login" method="post" class="col s12">
+    <div class="row">
+      <div class="input-field col s12">
+        <input name="email" id="email" type="email" class="validate" required />
+        <label for="email">Email</label>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="input-field col s12">
+        <input name="password" id="password" type="password" class="validate" required />
+        <label for="password">Password</label>
+      </div>
+    </div>
+    <button
+      class="btn waves-effect waves-light"
+      type="submit"
+      name="action"
+    >Login
+      <i class="material-icons right">send</i>
+    </button>
+  </form>
+
+    {{#if errorMessage}}
+    <p>Error: {{errorMessage}}</p>
+  {{/if}}
+</div>
