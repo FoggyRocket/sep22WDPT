@@ -68,11 +68,11 @@ select {
 }
 .section-guest{
    display: flex;
-
+   width: 100vw;
+   justify-content: space-around;
 }
 
 form{
   display: flex;
   flex-direction: column;
-  margin:10px
 }
