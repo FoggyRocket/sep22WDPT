@@ -66,3 +66,13 @@ select {
   margin: 5px;
   font-size: 1rem;
 }
+.section-guest{
+   display: flex;
+
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  margin:10px
+}
