@@ -28,12 +28,11 @@ function App() {
             //param1=datos de la tarea, param2=index
   const done = (data,index) => {
     const newArr = [...tasks]
-    //newArr[index].status = !newArr[index].status
+    newArr[index].status = !newArr[index].status
 
-    newArr.splice(index,1)
     setTasks(newArr)
   //setTasks(prevState =>  ) buscar si es posible con el prevState
-    //arr.splice(index,1)
+    //    newArr.splice(index,1) ---> eliminar 
   };
   return (
     <div className="App">
