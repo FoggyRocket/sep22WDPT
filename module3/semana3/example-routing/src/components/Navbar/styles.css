@@ -21,3 +21,7 @@ nav {
   nav a:hover {
     color: #88d3ce;
   }
+
+  .selected{
+    color: #88d3ce;
+  }

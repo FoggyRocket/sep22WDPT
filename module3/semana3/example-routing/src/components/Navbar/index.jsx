@@ -1,12 +1,28 @@
 import "./styles.css"
+import { Link,NavLink } from 'react-router-dom';
 const Navbar = () => {
     return (
       <nav>
         <div className="nav-container">
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Services</a>
-          <a href="#">Contact</a>
+          {/* <Link to="/">Home</Link> */}
+          <NavLink 
+            //className={({isActive})=>isActive ? "selected" : ""}
+            to="/"
+            >
+              Home
+          </NavLink>
+          <NavLink 
+            className={({isActive})=>isActive ? "selected" : ""}
+            to="/signup"
+            >
+              Signup
+          </NavLink>
+          <NavLink 
+            className={({isActive})=>isActive ? "selected" : ""}
+            to="/profile"
+            >
+              Profile
+          </NavLink>
         </div>
       </nav>
     );
